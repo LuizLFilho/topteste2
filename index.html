@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1 id="title-text">🎬 3 Movies That U Must See 🍿</h1>
+    </header>
+    <main>
+    <section id="visual-display">
+        <div id="top3-container">
+            <div id="movie2">
+                <div  class="movie-slot">
+                    <img src="imagens\2.webp" alt="Poster filme primeiro lugar"></div>
+                <div class="input-group">
+                <label class="label2" for="input-2">2º Lugar</label>
+                <input type="text" id="input-2" data-slot="2" placeholder="Digite o 2º lugar aqui...">
+                <ul class="suggestions-list" data-suggestions-for="2"></ul>
+                </div>
+            </div>
+            
+            <div id="movie1">
+                <div class="movie-slot">
+                    <img src="imagens\1.webp" alt="Poster filme primeiro lugar"></div>
+                <div class="input-group">
+                <label class="label1" for="input-1">1º Lugar</label>
+                <input type="text" id="input-1" data-slot="1" placeholder="Digite o 1º lugar aqui...">
+                <ul class="suggestions-list" data-suggestions-for="1"></ul>
+                </div>
+                </div>
+            <div id="movie3">
+                <div class="movie-slot">
+                    <img src="imagens\3.webp" alt="Poster filme primeiro lugar"></div>
+                <div class="input-group">
+                <label class="label3" for="input-3">3º Lugar</label>
+                <input type="text" id="input-3" data-slot="3" placeholder="Digite o 3º lugar aqui...">
+                <ul class="suggestions-list" data-suggestions-for="3"></ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer>
+        <button id="share-button" disabled>➤ share</button>
+    </footer>
+</main>
+    
+    <script src="script.js"></script>
+</body>
+</html>
