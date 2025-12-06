@@ -3,56 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HelpTech - Canivete Tech para Idosos</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
 </head>
 <body>
-    <header>
-        <h1 id="title-text">🎬 3 Movies That U Must See 🍿</h1>
-    </header>
-    <main>
-    <section id="visual-display">
-        <div id="top3-container">
-            <div id="movie2">
-                <div  class="movie-slot">
-                    <img src="imagens\filmes.png" alt="Poster filme primeiro lugar"></div>
-                <div class="input-group">
-                <label class="label2" for="input-2">2º Lugar</label>
-                <input type="text" id="input-2" data-slot="2" placeholder="Digite o 2º lugar aqui...">
-                <ul class="suggestions-list" data-suggestions-for="2"></ul>
-                </div>
-            </div>
-            
-            <div id="movie1">
-                <div class="movie-slot">
-                    <img src="imagens\filmes.png" alt="Poster filme primeiro lugar"></div>
-                <div class="input-group">
-                <label class="label1" for="input-1">1º Lugar</label>
-                <input type="text" id="input-1" data-slot="1" placeholder="Digite o 1º lugar aqui...">
-                <ul class="suggestions-list" data-suggestions-for="1"></ul>
-                </div>
-                </div>
-            <div id="movie3">
-                <div class="movie-slot">
-                    <img src="imagens\filmes.png" alt="Poster filme primeiro lugar"></div>
-                <div class="input-group">
-                <label class="label3" for="input-3">3º Lugar</label>
-                <input type="text" id="input-3" data-slot="3" placeholder="Digite o 3º lugar aqui...">
-                <ul class="suggestions-list" data-suggestions-for="3"></ul>
-                </div>
-            </div>
-        </div>
-    </section>
+    <main id="home-hub">
+        <h1>HelpTech</h1>
 
+        <section class="ferramentas-grid">
+            <a href="f1-decodificador.html" class="botao-ferramenta" aria-label="Decodificador de Contas e Boletos">
+                <span class="icone-placeholder">📄</span>
+                <span class="nome-ferramenta">Decodificador de Contas e Boletos</span>
+            </a>
 
-    <footer>
-        <button id="share-button" disabled>➤ share</button>
-    </footer>
-</main>
-    
-    <script src="script.js"></script>
+            <a href="f2-qrcode-contato.html" class="botao-ferramenta" aria-label="Gerador de Contato QR Code">
+                <span class="icone-placeholder">📲</span>
+                <span class="nome-ferramenta">Gerador de Dados por QR Code</span>
+            </a>
+
+            <a href="f3-lupa.html" class="botao-ferramenta" aria-label="Amplificador de Texto">
+                <span class="icone-placeholder">🔎</span>
+                <span class="nome-ferramenta">Amplificador de Texto (Zoom + Lanterna)</span>
+            </a>
+
+            <a href="f4-extenso.html" class="botao-ferramenta" aria-label="Conversor de Números para Extenso">
+                <span class="icone-placeholder">📝</span>
+                <span class="nome-ferramenta">Conversor de Números para Extenso</span>
+            </a>
+
+            <a href="f5-divisao.html" class="botao-ferramenta" aria-label="Calculadora de Gorjetas e Divisão de Contas">
+                <span class="icone-placeholder">💰</span>
+                <span class="nome-ferramenta">Calculadora de Divisão de Contas</span>
+            </a>
+
+            <a href="f6-wifi.html" class="botao-ferramenta" aria-label="Gerador de QR Code de Wi-Fi">
+                <span class="icone-placeholder">📡</span>
+                <span class="nome-ferramenta">Gerador de QR Code de Wi-Fi</span>
+            </a>
+
+            <a href="f7-diagnostico.html" class="botao-ferramenta" aria-label="Diagnóstico de Conexão à Internet">
+                <span class="icone-placeholder">🌐</span>
+                <span class="nome-ferramenta">Diagnóstico de Conexão à Internet</span>
+            </a>
+
+            <a href="f8-localizacao.html" class="botao-ferramenta" aria-label="Assistente Estou Aqui">
+                <span class="icone-placeholder">📍</span>
+                <span class="nome-ferramenta">Assistente “Estou Aqui” (Localização)</span>
+            </a>
+
+            <a href="f9-leitor-qr.html" class="botao-ferramenta" aria-label="Leitor de Código QR">
+                <span class="icone-placeholder">📷</span>
+                <span class="nome-ferramenta">Leitor de Código QR (Câmera)</span>
+            </a>
+
+            <a href="f10-contatos.html" class="botao-ferramenta" aria-label="Painel de Contatos Essenciais">
+                <span class="icone-placeholder">☎️</span>
+                <span class="nome-ferramenta">Painel de Contatos Essenciais</span>
+            </a>
+        </section>
+    </main>
+
+    <script src="bloqueio.js"></script> 
 </body>
 </html>
