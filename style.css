@@ -54,6 +54,7 @@ p {
 }
 
 
+
 .botao-ferramenta {
     display: flex;
     flex-direction: column;
@@ -64,10 +65,11 @@ p {
     border: 3px solid #0050A1; 
     border-radius: 8px; 
     min-height: 120px; 
-    padding: 16px 8px;
+    padding: 22px 14px;
     font-size: 20px;
     font-weight: 700; 
     color: #000000; 
+    gap: 2rem;
     transition: background-color 0.2s, border-color 0.2s, transform 0.1s;
 }
 
