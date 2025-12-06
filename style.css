@@ -62,7 +62,7 @@ p {
     align-items: center;
     text-align: center;
     background-color: #FFFFFF;
-    border: 3px solid #0050A1; 
+    border: 3px solid #838080; 
     border-radius: 8px; 
     min-height: 120px; 
     padding: 22px 14px;
@@ -86,3 +86,4 @@ p {
     margin-bottom: 8px;
     line-height: 1; 
 }
+
