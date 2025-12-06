@@ -1,88 +1,74 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HelpTech - Canivete Tech para Idosos</title>
 
-html, body {
-    font-family: 'Inter', sans-serif;
-    background-color: #FFFFFF;
-    color: #000000;
-    font-size: 18px;
-    line-height: 1.5;
-    min-height: 100vh;
-    overflow-x: hidden;
-}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main id="home-hub">
+        <h1>HelpTech</h1>
+        <p>Ajudas tecnológicas para o cotidianos.</p>
 
-a {
-    color: #0050A1;
-    text-decoration: none;
-}
+        <section class="ferramentas-grid">
+            <a href="f1-decodificador.html" class="botao-ferramenta" aria-label="Decodificador de Contas e Boletos">
+                <span class="icone-placeholder itensgrid">📄</span>
+                <span class="nome-ferramenta itensgrid">Decodificador de Contas e Boletos</span>
+            </a>
 
-a:hover, a:focus {
-    text-decoration: none;
-}
+            <a href="f2-qrcode-contato.html" class="botao-ferramenta" aria-label="Gerador de Contato QR Code">
+                <span class="icone-placeholder itensgrid">📲</span>
+                <span class="nome-ferramenta itensgrid">Gerador de Dados por QR Code</span>
+            </a>
 
+            <a href="f3-lupa.html" class="botao-ferramenta" aria-label="Amplificador de Texto">
+                <span class="icone-placeholder itensgrid">🔎</span>
+                <span class="nome-ferramenta itensgrid">Amplificador de Texto (Zoom + Lanterna)</span>
+            </a>
 
-h1 {
-    font-size: 2.2rem; 
-    font-weight: 700; 
-    color: #0050A1;
-    margin: 36px 0;
-    
-}
+            <a href="f4-extenso.html" class="botao-ferramenta" aria-label="Conversor de Números para Extenso">
+                <span class="icone-placeholder">📝</span>
+                <span class="nome-ferramenta">Conversor de Números para Extenso</span>
+            </a>
 
+            <a href="f5-divisao.html" class="botao-ferramenta" aria-label="Calculadora de Gorjetas e Divisão de Contas">
+                <span class="icone-placeholder">💰</span>
+                <span class="nome-ferramenta">Calculadora de Divisão de Contas</span>
+            </a>
 
-p {
-    margin-bottom: 24px; 
-}
+            <a href="f6-wifi.html" class="botao-ferramenta" aria-label="Gerador de QR Code de Wi-Fi">
+                <span class="icone-placeholder">📡</span>
+                <span class="nome-ferramenta">Gerador de QR Code de Wi-Fi</span>
+            </a>
 
+            <a href="f7-diagnostico.html" class="botao-ferramenta" aria-label="Diagnóstico de Conexão à Internet">
+                <span class="icone-placeholder">🌐</span>
+                <span class="nome-ferramenta">Diagnóstico de Conexão à Internet</span>
+            </a>
 
-#home-hub {
-    padding: 24px; 
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: center;
-}
+            <a href="f8-localizacao.html" class="botao-ferramenta" aria-label="Assistente Estou Aqui">
+                <span class="icone-placeholder">📍</span>
+                <span class="nome-ferramenta">Assistente “Estou Aqui” (Localização)</span>
+            </a>
 
+            <a href="f9-leitor-qr.html" class="botao-ferramenta" aria-label="Leitor de Código QR">
+                <span class="icone-placeholder">📷</span>
+                <span class="nome-ferramenta">Leitor de Código QR (Câmera)</span>
+            </a>
 
-.ferramentas-grid {
-    display: grid; 
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 32px; 
-}
+            <a href="f10-contatos.html" class="botao-ferramenta" aria-label="Painel de Contatos Essenciais">
+                <span class="icone-placeholder">☎️</span>
+                <span class="nome-ferramenta">Painel de Contatos Essenciais</span>
+            </a>
+        </section>
+    </main>
 
-
-
-.botao-ferramenta {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background-color: #FFFFFF;
-    border: 3px solid #838080; 
-    border-radius: 8px; 
-    min-height: 120px; 
-    padding: 22px 14px;
-    font-size: 20px;
-    font-weight: 700; 
-    color: #000000; 
-    gap: 2rem;
-    transition: background-color 0.2s, border-color 0.2s, transform 0.1s;
-}
-
-.botao-ferramenta:hover,
-.botao-ferramenta:focus {
-    background-color: #f0f0f0;
-    border-color: #007F5F;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.icone-placeholder {
-    font-size: 3rem;
-    margin-bottom: 8px;
-    line-height: 1; 
-}
+    <script src="bloqueio.js"></script> 
+</body>
+</html>
