@@ -63,10 +63,10 @@ p {
     align-items: center;
     text-align: center;
     background-color: #FFFFFF;
-    border: 3px solid #83808000; 
+    border: 3px solid #e7ebe9; 
     border-radius: 8px; 
     min-height: 120px; 
-    padding: 22px 14px;
+    padding: 62px 20px;
     font-size: 20px;
     font-weight: 700; 
     color: #000000; 
@@ -77,9 +77,8 @@ p {
 
 .botao-ferramenta:hover,
 .botao-ferramenta:focus {
-    background-color: #f0f0f0;
-    border-color: #007F5F;
-    transform: translateY(-2px);
+    border-color: #0759f3;
+    transform: translateY(-5px);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
