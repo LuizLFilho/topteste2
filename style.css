@@ -76,12 +76,16 @@ html, body {
 
 }
 
-.botao-ferramenta:hover,
-.botao-ferramenta:focus {
-    border: 1px solid #0050A1;
-    color: #0050A1;
+.item-ferramenta:hover,
+.item-ferramenta:focus-within {
+    /* Efeito de "levantar" o cartão */
+    transform: translateY(-5px); 
+    /* Aumenta a sombra quando focado */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); 
+    
+    /* Fundo levemente colorido para feedback visual claro */
+    background-color: rgba(0, 80, 161, 0.05); /* Azul muito transparente */
 }
-
 
 .icone-placeholder {
     font-size: 3rem; 
