@@ -1,51 +1,40 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-  <title>Zoom de Câmera — Ajuda visual</title>
-  <link rel="stylesheet" href="f3-lupa.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zoom com Lanterna</title>
+<link rel="stylesheet" href="f3-lupa.css">
 </head>
 <body>
-  <main class="container" role="main" aria-labelledby="title">
-    <h1 id="title">Zoom de Câmera</h1>
-    <p class="subtitle">Use a câmera do seu celular como uma lupa: inicie a câmera e ajuste o zoom. Toque em LANTERNA para acender a luz (se suportado).</p>
 
-    <section class="card">
-      <div class="controls-top">
-        <button id="btnStart" class="btn primary">Abrir câmera</button>
-        <button id="btnStop" class="btn secondary" disabled>Fechar câmera</button>
-      </div>
+<div class="container">
 
-      <div id="previewWrap" class="preview-wrap hidden" aria-live="polite">
-        <div class="video-frame">
-          <video id="video" playsinline autoplay muted></video>
+    <h1>Zoom com Câmera</h1>
+
+    <button id="openCamera" class="btn">Abrir Câmera</button>
+
+    <div id="cameraArea" class="hidden">
+        
+        <video id="video" playsinline></video>
+
+        <div class="controls">
+            <label class="zoom-label">Zoom</label>
+            <input id="zoomRange" type="range" min="1" max="5" step="0.1" value="1" disabled>
+
+            <button id="torchBtn" class="btn secondary">Lanterna</button>
         </div>
+    </div>
 
-        <div class="overlays">
-          <div class="zoom-controls">
-            <button id="zoomOut" class="icon-btn" title="Diminuir zoom">−</button>
-            <input id="zoomRange" type="range" min="1" max="4" step="0.1" value="1" aria-label="Zoom" />
-            <button id="zoomIn" class="icon-btn" title="Aumentar zoom">+</button>
-          </div>
+    <p id="msg" class="msg"></p>
 
-          <div class="toggles">
-            <button id="btnTorch" class="btn secondary" disabled aria-pressed="false">LANTERNA</button>
-            <button id="btnSwitch" class="btn secondary" title="Trocar câmera">↺</button>
-          </div>
+    <!-- Tela branca super forte (fallback) -->
+    <div id="flashScreen"></div>
 
-          <div class="pinch-hint muted">Use gesto de pinça para ajustar zoom</div>
-        </div>
+</div>
 
-        <div id="status" class="status muted">Pronto</div>
-      </div>
-    </section>
+<script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+<script src="f3-lupa.js"></script>
 
-    <footer class="footer muted small">
-      Compatibilidade: Chrome Android tem melhor suporte para lanterna / zoom nativo. Outros navegadores usarão fallback digital.
-    </footer>
-  </main>
-
-  <script src="f3-lupa.js"></script>
 </body>
 </html>
