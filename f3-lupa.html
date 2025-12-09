@@ -2,8 +2,8 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Zoom com Lanterna</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zoom com Câmera</title>
 <link rel="stylesheet" href="f3-lupa.css">
 </head>
 <body>
@@ -11,30 +11,28 @@
 <div class="container">
 
     <h1>Zoom com Câmera</h1>
+    <p class="subtitle">Use a câmera traseira como lupa. Funciona em Android e iPhone.</p>
 
-    <button id="openCamera" class="btn">Abrir Câmera</button>
+    <button id="openCameraBtn" class="btn-primary">Ativar Câmera</button>
 
-    <div id="cameraArea" class="hidden">
-        
-        <video id="video" playsinline></video>
+    <div id="cameraArea" class="camera-area hidden">
+        <video id="video" autoplay playsinline></video>
 
         <div class="controls">
-            <label class="zoom-label">Zoom</label>
-            <input id="zoomRange" type="range" min="1" max="5" step="0.1" value="1" disabled>
 
-            <button id="torchBtn" class="btn secondary">Lanterna</button>
+            <div class="zoom-box">
+                <label>Zoom</label>
+                <input type="range" id="zoomSlider" min="1" max="5" value="1" step="0.1">
+            </div>
+
+            <button id="flashBtn" class="btn-secondary hidden">Lanterna</button>
+
+            <button id="whiteLightBtn" class="btn-secondary">Luz Auxiliar</button>
         </div>
     </div>
 
-    <p id="msg" class="msg"></p>
-
-    <!-- Tela branca super forte (fallback) -->
-    <div id="flashScreen"></div>
-
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
 <script src="f3-lupa.js"></script>
-
 </body>
 </html>
