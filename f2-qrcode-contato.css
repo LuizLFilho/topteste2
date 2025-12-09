@@ -1,0 +1,117 @@
+:root {
+    --bg:#f0f2f5;
+    --card:#ffffff;
+    --text:#222;
+    --muted:#666;
+    --accent:#007bff;
+    --accent-dark:#005fcc;
+}
+
+body {
+    margin: 0;
+    font-family: Inter, Arial, sans-serif;
+    background: var(--bg);
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 430px;
+    background: var(--card);
+    padding: 20px;
+    border-radius: 14px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.1);
+}
+
+h1 {
+    margin: 0;
+    font-size: 22px;
+    color: var(--text);
+}
+
+.subtitle {
+    font-size: 14px;
+    margin-bottom: 20px;
+    color: var(--muted);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    font-size: 14px;
+    color: var(--muted);
+}
+
+input {
+    width: 100%;
+    margin-top: 6px;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+.btn-primary,
+.btn-secondary {
+    width: 100%;
+    padding: 14px;
+    font-size: 17px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-primary {
+    background: var(--accent);
+    color: white;
+    border: none;
+}
+.btn-primary:hover {
+    background: var(--accent-dark);
+}
+
+.btn-secondary {
+    background: #e9ecef;
+    border: 1px solid #ccc;
+}
+.btn-secondary:hover {
+    background: #d6d8db;
+}
+
+.erro {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.qr-section {
+    margin-top: 25px;
+    text-align: center;
+    animation: fadeIn 0.4s ease;
+}
+
+.qr-box {
+    background: #fafafa;
+    padding: 20px;
+    border-radius: 14px;
+    margin: 15px 0;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.fade {
+    animation: fadeIn 0.4s ease;
+}
