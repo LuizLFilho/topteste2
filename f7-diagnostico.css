@@ -1,0 +1,78 @@
+body {
+    background: #f2f2f2;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 430px;
+    margin: 0 auto;
+    padding: 22px;
+}
+
+.title {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 22px;
+}
+
+.btn-primary {
+    width: 100%;
+    padding: 18px;
+    font-size: 20px;
+    background: #0055ff;
+    color: white;
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+}
+
+.btn-primary:active {
+    transform: scale(0.98);
+}
+
+.results {
+    margin-top: 28px;
+    padding: 20px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    animation: fadeIn 0.4s ease;
+}
+
+.hidden {
+    display: none;
+}
+
+.result-block {
+    margin-bottom: 18px;
+}
+
+.label {
+    font-size: 20px;
+    margin-bottom: 6px;
+}
+
+.value {
+    font-size: 32px;
+    font-weight: bold;
+    color: #111;
+}
+
+.mensagem-final {
+    margin-top: 12px;
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+    color: #006600;
+}
+
+.mensagem-final.offline {
+    color: #cc0000;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(10px);}
+    to {opacity: 1; transform: translateY(0);}
+}
