@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Valor por Extenso — Converter</title>
+  <link rel="stylesheet" href="f4-extenso.css">
+</head>
+<body>
+  <main class="container" role="main" aria-labelledby="title">
+    <h1 id="title">Converter valor por extenso</h1>
+    <p class="subtitle">Digite um valor (ex: 1250.50 ou 1.250,50). Vai de R$ 0,01 até R$ 999.999,99.</p>
+
+    <section class="card">
+      <label for="valorInput" class="label">Valor (R$)</label>
+      <input id="valorInput" inputmode="decimal" placeholder="Ex: 1250,50" autocomplete="off" />
+
+      <div class="row">
+        <button id="btnConverter" class="btn primary">Converter</button>
+        <button id="btnLimpar" class="btn secondary">Limpar</button>
+      </div>
+
+      <div id="erro" class="erro hidden" role="alert">Valor inválido. Por favor, digite apenas números e verifique se o valor não ultrapassa R$ 999.999,99.</div>
+    </section>
+
+    <section id="resultadoCard" class="card hidden" aria-live="polite">
+      <div class="result-label">Valor por extenso</div>
+      <div id="extenso" class="extenso">—</div>
+
+      <div class="row">
+        <button id="btnCopiar" class="btn copy">COPIAR TEXTO</button>
+      </div>
+
+      <div id="copiedMsg" class="copied hidden">Copiado para a área de transferência ✓</div>
+    </section>
+
+    <footer class="footer muted small">Formato: CAIXA ALTA — ideal para cheques e documentos.</footer>
+  </main>
+
+  <script src="f4-extenso.js"></script>
+</body>
+</html>

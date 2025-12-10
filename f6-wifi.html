@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de QR Code Wi-Fi</title>
+
+    <link rel="stylesheet" href="f6-wifi.css">
+
+    <!-- Biblioteca QRCode.js -->
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script>
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>Gerar QR Code de Wi-Fi</h1>
+
+        <label>Nome da Rede (SSID)</label>
+        <input type="text" id="ssid" placeholder="Ex: MinhaCasaWiFi">
+
+        <label>Senha da Rede</label>
+        <input type="text" id="password" placeholder="Ex: 12345678">
+
+        <div class="checkbox-row">
+            <input type="checkbox" id="noPass">
+            <label for="noPass">Rede sem senha</label>
+        </div>
+
+        <button id="generateBtn">Gerar QR Code</button>
+
+        <p class="error" id="errorMsg"></p>
+
+        <div id="qrContainer" class="qr-box" style="display:none;">
+            <div id="qrcode"></div>
+
+            <p class="info-text">Este é o código para conectar-se automaticamente ao Wi-Fi da sua casa.</p>
+
+            <button id="downloadBtn" class="secondary-btn">Baixar QR Code</button>
+        </div>
+
+    </div>
+
+    <script src="f6-wifi.js"></script>
+</body>
+</html>

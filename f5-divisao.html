@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dividir Conta</title>
+
+  <!-- Arquivo CSS externo -->
+  <link rel="stylesheet" href="f5-divisao.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>Dividir Conta</h1>
+    <p class="subtitle">Calcule o valor com ou sem 10% e divida entre as pessoas.</p>
+
+    <div class="card">
+      <label>Valor Total da Conta (R$)</label>
+      <input id="valorConta" type="text" placeholder="Ex: 125.50">
+
+      <label>Aplicar 10% do Garçom?</label>
+      <div class="toggle-row">
+        <button class="toggle-btn" id="btnSim">SIM</button>
+        <button class="toggle-btn off" id="btnNao">NÃO</button>
+      </div>
+
+      <label>Número de Pessoas</label>
+      <input id="numPessoas" type="number" min="1" placeholder="Ex: 4">
+
+      <button id="btnCalcular" class="btn">Calcular</button>
+
+      <p id="erro" class="erro"></p>
+    </div>
+
+    <div class="card" id="resultCard" style="display:none;">
+      <h2>Resultados</h2>
+
+      <p class="result-label">Valor do Serviço (10%)</p>
+      <p class="result" id="valorServico">—</p>
+
+      <p class="result-label">Valor Total Final</p>
+      <p class="result" id="valorFinal">—</p>
+
+      <p class="result-label">Valor por Pessoa</p>
+      <p class="result" id="valorPessoa">—</p>
+
+      <button id="btnCopiar" class="btn small">Copiar Valores</button>
+      <p id="copiado" class="copiado"></p>
+    </div>
+  </div>
+
+  <!-- Arquivo JS externo -->
+  <script src="f5-divisao.js"></script>
+</body>
+</html>
