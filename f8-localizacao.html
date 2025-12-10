@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Assistente — Enviar Minha Localização</title>
+  <link rel="stylesheet" href="f8-localizacao.css">
+</head>
+<body>
+  <main class="container" role="main" aria-labelledby="title">
+    <h1 id="title">Assistente “Estou Aqui”</h1>
+    <p class="subtitle">Compartilhe sua localização com alguém de confiança rapidamente.</p>
+
+    <section class="card">
+      <div class="note">Clique no botão para obter sua localização precisa e abrir o menu de compartilhamento do celular.</div>
+
+      <button id="btnGet" class="btn primary">Enviar Minha Localização</button>
+
+      <div id="status" class="status muted">Pronto</div>
+    </section>
+
+    <!-- Exibe link / coordenadas como fallback -->
+    <section id="resultCard" class="card hidden">
+      <div class="label">Localização encontrada</div>
+      <div id="coords" class="coords">—</div>
+      <a id="mapsLink" class="maps-link" href="#" target="_blank" rel="noopener">Abrir no Google Maps</a>
+
+      <div class="row">
+        <button id="btnCopy" class="btn secondary">Copiar mensagem</button>
+        <button id="btnWhats" class="btn secondary">Abrir WhatsApp</button>
+      </div>
+    </section>
+
+    <footer class="footer muted small">⚠️ Compartilhe sua localização APENAS com contatos de TOTAL confiança.</footer>
+  </main>
+
+  <!-- Modal de alerta -->
+  <div id="alertModal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="alertTitle">
+    <div class="modal-back"></div>
+    <div class="modal-box">
+      <h2 id="alertTitle">⚠️ ALERTA</h2>
+      <p class="muted">Compartilhe sua localização APENAS com contatos de total confiança. Tenha CERTEZA de que você está enviando para a pessoa correta.</p>
+
+      <div class="modal-body">
+        <p class="muted small">Ao confirmar, sua posição (um link do Google Maps) será colocada na janela de compartilhamento do seu celular.</p>
+        <p id="precisionNote" class="muted small"></p>
+      </div>
+
+      <div class="modal-actions">
+        <button id="abortShare" class="btn secondary">Cancelar</button>
+        <button id="confirmShare" class="btn primary">Confirmar e Compartilhar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="f8-localizacao.js"></script>
+</body>
+</html>
