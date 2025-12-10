@@ -77,37 +77,3 @@ flashBtn.addEventListener("click", async () => {
     }
 });
 
-// --- LUZ AUXILIAR (FUNCIONA EM QUALQUER CELULAR) ---
-whiteLightBtn.addEventListener("click", () => {
-    openWhiteScreen();
-});
-
-function openWhiteScreen() {
-    const w = window.open("", "_blank", "fullscreen=yes");
-    if (!w) return alert("Bloqueado pelo navegador.");
-
-    w.document.write(`
-        <body style="
-            margin:0; 
-            background:white; 
-            width:100vw; 
-            height:100vh;
-            ">
-        <button 
-            onclick="window.close()" 
-            style="
-                position:absolute;
-                top:20px;
-                left:20px;
-                padding:12px 16px;
-                font-size:16px;
-                border:none;
-                background:#000;
-                color:white;
-                border-radius:8px;
-            ">
-            Fechar Luz
-        </button>
-        </body>
-    `);
-}
