@@ -25,12 +25,14 @@ html, body {
 }
 
 
-#home-hub h1 {
-    font-size: 60px;
-    color: #0050A1;
+#home-hub img {
+    max-width: 20rem;
+    margin-bottom: 1.6rem;
 }
 
 #home-hub p {
+    display: inline-block;
+    max-width: 20rem;
     font-size: 30px;
     line-height: 1.3;
     color: rgb(70, 69, 69);
