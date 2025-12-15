@@ -1,6 +1,6 @@
 * {
-    margin: 0;
-    padding: 0;
+    margin: 0.1rem;
+    padding: 0.1rem;
     box-sizing: border-box;
 }
 
@@ -84,22 +84,15 @@ html, body {
     background-color: rgba(0, 80, 161, 0.05);
 }
 
-.icone-placeholder {
-    font-size: 3rem; 
-    margin-right: 24px;
-    line-height: 1; 
-    color: #0050A1;
-}
-
 .nome-ferramenta {
     max-width: 90%;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     color: #222222; 
 }
 
 
 .material-symbols-outlined {
   font-variation-settings: 'wght' 400; 
-  font-size: 2.5rem;
+  font-size: 2.9rem;
   color: #072b61;
 }
