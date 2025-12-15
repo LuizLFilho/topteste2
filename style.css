@@ -26,13 +26,13 @@ html, body {
 
 
 #home-hub img {
-    max-width: 15rem;
+    max-width: 18rem;
     margin-bottom: 1.6rem;
 }
 
 #home-hub p {
     display: inline-block;
-    max-width: 18rem;
+    max-width: 20rem;
     font-size: 30px;
     line-height: 1.1;
     color: rgb(70, 69, 69);
@@ -62,7 +62,7 @@ html, body {
 .botao-ferramenta {
     display: flex;
     flex-direction: row; 
-    gap: 1.4rem;
+    gap: 1.5rem;
     justify-content: flex-start; 
     align-items: center;
     text-align: left;
@@ -70,7 +70,7 @@ html, body {
     border: none; 
     width: 100%; 
     min-height: 72px;
-    padding: 16px 24px; 
+    padding: 8px 8px; 
     font-size: 22px;
     font-weight: 700; 
     color: #000000;
@@ -96,4 +96,3 @@ html, body {
   font-size: 2.9rem;
   color: #072b61;
 }
-
