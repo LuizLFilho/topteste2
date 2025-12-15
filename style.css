@@ -26,13 +26,13 @@ html, body {
 
 
 #home-hub img {
-    max-width: 18rem;
+    max-width: 15rem;
     margin-bottom: 1.6rem;
 }
 
 #home-hub p {
     display: inline-block;
-    max-width: 20rem;
+    max-width: 18rem;
     font-size: 30px;
     line-height: 1.1;
     color: rgb(70, 69, 69);
@@ -96,3 +96,4 @@ html, body {
   font-size: 2.9rem;
   color: #072b61;
 }
+
