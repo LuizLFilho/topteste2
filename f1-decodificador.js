@@ -115,7 +115,7 @@ async function renderPageToCanvas(pageNumber=1){
   canvasHolder.appendChild(canvas);
 }
 
-// extrai texto e procura sequências de 47 ou 48 dígitos
+// extrai texto e procura sequências de 47 ou 48 dígitos com regex específicos
 async function extractCodeFromText(pdf){
   const num = pdf.numPages;
   for(let i=1;i<=num;i++){
@@ -123,30 +123,63 @@ async function extractCodeFromText(pdf){
       const page = await pdf.getPage(i);
       const txt = await page.getTextContent();
       const strings = txt.items.map(it => it.str || '').join(' ');
-      // normaliza: remove quebras e caracteres extras, deixa somente dígitos em sequência
-      const digitsOnly = strings.replace(/\D/g,'');
-      // procura 47 ou 48
-      let m = digitsOnly.match(/(\d{47,48})/);
-      if (m){
-        const code = m[1];
-        showFoundCode(code, `Texto extraído (página ${i})`);
-        await renderPageToCanvas(i);
-        return true;
+      const normalized = strings.replace(/\s+/g, ' ').trim();
+
+      // Regex prioritário para boleto bancário (47 dígitos): 5.5 5.6 5.6 1 14 (pontos opcionais)
+      const regex47 = /(\d{5})[\.]?(\d{5})\s*(\d{5})[\.]?(\d{6})\s*(\d{5})[\.]?(\d{6})\s*(\d{1})\s*(\d{14})/;
+      const m47 = regex47.exec(normalized);
+      if (m47) {
+        const code = m47.slice(1).join('');
+        if (code.length === 47 && isValidBoletoBancario(code)) {
+          showFoundCode(code, `Texto extraído (página ${i} - Boleto Bancário)`);
+          await renderPageToCanvas(i);
+          return true;
+        }
       }
-      // tenta também detectar partes formatadas (com pontos/espacos)
-      const groups = strings.match(/(\d{1,5}[\.\s\-]?\d{1,5}[\.\s\-]?\d{1,5}[\.\s\-]?\d{1,5}[\.\s\-]?\d{1,5,}?)/g);
-      // fallback simples: pega qualquer grupo de dígitos que ao juntar dê 47/48
-      if (groups){
-        for(const g of groups){
-          const raw = g.replace(/\D/g,'');
-          if (raw.length === 47 || raw.length === 48){
-            showFoundCode(raw, `Texto extraído (página ${i})`);
-            await renderPageToCanvas(i);
-            return true;
+
+      // Regex prioritário para boleto arrecadação/concessionárias (48 dígitos): 11.1 11.1 11.1 11.1 (pontos opcionais)
+      const regex48 = /(\d{11})[\.]?(\d{1})\s*(\d{11})[\.]?(\d{1})\s*(\d{11})[\.]?(\d{1})\s*(\d{11})[\.]?(\d{1})/;
+      const m48 = regex48.exec(normalized);
+      if (m48) {
+        const code = m48.slice(1).join('');
+        if (code.length === 48 && isValidBoletoArrecadacao(code)) {
+          showFoundCode(code, `Texto extraído (página ${i} - Boleto Arrecadação)`);
+          await renderPageToCanvas(i);
+          return true;
+        }
+      }
+
+      // Fallback: método antigo (sequência contínua de dígitos)
+      const digitsOnly = normalized.replace(/\D/g, '');
+      const mFallback = digitsOnly.match(/(\d{47,48})/);
+      if (mFallback) {
+        const code = mFallback[1];
+        const is47 = code.length === 47;
+        const isValid = is47 ? isValidBoletoBancario(code) : isValidBoletoArrecadacao(code);
+        if (isValid) {
+          showFoundCode(code, `Texto extraído (fallback contínuo - página ${i})`);
+          await renderPageToCanvas(i);
+          return true;
+        }
+      }
+
+      // Fallback: grupos formatados genéricos
+      const groups = normalized.match(/(\d{1,14}[ \.\-]?)+/g);
+      if (groups) {
+        for (const g of groups) {
+          const raw = g.replace(/\D/g, '');
+          const is47 = raw.length === 47;
+          if (raw.length === 47 || raw.length === 48) {
+            const isValid = is47 ? isValidBoletoBancario(raw) : isValidBoletoArrecadacao(raw);
+            if (isValid) {
+              showFoundCode(raw, `Texto extraído (fallback grupos - página ${i})`);
+              await renderPageToCanvas(i);
+              return true;
+            }
           }
         }
       }
-      // se não encontrou, continua para próxima página
+
     }catch(err){
       console.warn('erro extrair página', i, err);
     }
@@ -170,10 +203,11 @@ function showFoundCode(digits, methodText){
 function formatReadable(d){
   if (!d) return '—';
   if (d.length === 47){
-    // exemplo simples: agrupa em 5-5-5-6-... (visual apenas)
-    return d.replace(/(.{5})(.{5})(.{5})(.{6})(.{6})(.{6})(.{14})/, '$1 $2 $3 $4 $5 $6 $7').trim();
+    // agrupa em 5.5 5.6 5.6 1 14
+    return d.replace(/(.{5})(.{5})(.{5})(.{6})(.{5})(.{6})(.{1})(.{14})/, '$1.$2 $3.$4 $5.$6 $7 $8').trim();
   } else if (d.length === 48){
-    return d.replace(/(.{4})/g,'$1 ').trim();
+    // agrupa em 11.1 11.1 11.1 11.1
+    return d.replace(/(.{11})(.{1})(.{11})(.{1})(.{11})(.{1})(.{11})(.{1})/, '$1.$2 $3.$4 $5.$6 $7.$8').trim();
   } else if (d.length === 44){
     return d.replace(/(.{4})/g,'$1 ').trim();
   } else {
@@ -219,3 +253,86 @@ btnShowFormatted.addEventListener('click', () => {
     await processPdf(lastArrayBuffer);
   });
 })();
+
+// Funções de validação (FEBRABAN)
+function modulo10(numero) {
+  numero = numero.replace(/\D/g, '');
+  let soma = 0;
+  let peso = 2;
+  for (let i = numero.length - 1; i >= 0; i--) {
+    let mult = parseInt(numero[i]) * peso;
+    if (mult >= 10) mult = 1 + (mult - 10);
+    soma += mult;
+    peso = (peso === 2) ? 1 : 2;
+  }
+  let digito = 10 - (soma % 10);
+  return (digito === 10) ? 0 : digito;
+}
+
+function modulo11Banco(numero) {
+  numero = numero.replace(/\D/g, '');
+  let soma = 0;
+  let peso = 2;
+  const base = 9;
+  for (let i = numero.length - 1; i >= 0; i--) {
+    soma += parseInt(numero[i]) * peso;
+    peso = (peso < base) ? peso + 1 : 2;
+  }
+  let digito = 11 - (soma % 11);
+  if (digito > 9) digito = 0;
+  if (digito === 0) digito = 1;
+  return digito;
+}
+
+function modulo11Arrecadacao(numero) {
+  numero = numero.replace(/\D/g, '');
+  let soma = 0;
+  let peso = 2;
+  for (let i = numero.length - 1; i >= 0; i--) {
+    soma += parseInt(numero[i]) * peso;
+    peso++;
+    if (peso > 9) peso = 2;
+  }
+  let resto = soma % 11;
+  if (resto === 0 || resto === 1) return 0;
+  return 11 - resto;
+}
+
+function isValidBoletoBancario(linha) {
+  linha = linha.replace(/\D/g, '');
+  if (linha.length !== 47 || linha.startsWith('000')) return false; // evita zeros placeholders
+  // Valida DVs dos campos
+  const field1_data = linha.substring(0, 9);
+  const dv1 = parseInt(linha.substring(9, 10));
+  if (modulo10(field1_data) !== dv1) return false;
+  const field2_data = linha.substring(10, 20);
+  const dv2 = parseInt(linha.substring(20, 21));
+  if (modulo10(field2_data) !== dv2) return false;
+  const field3_data = linha.substring(21, 31);
+  const dv3 = parseInt(linha.substring(31, 32));
+  if (modulo10(field3_data) !== dv3) return false;
+  // Reconstrói código de barras sem DV geral e valida
+  const general_dv = parseInt(linha.substring(32, 33));
+  const barra_without_dv = linha.substring(0, 4) + linha.substring(33, 47) + linha.substring(4, 9) + linha.substring(10, 20) + linha.substring(21, 31);
+  const calculated_general = modulo11Banco(barra_without_dv);
+  return calculated_general === general_dv;
+}
+
+function isValidBoletoArrecadacao(linha) {
+  linha = linha.replace(/\D/g, '');
+  if (linha.length !== 48 || !linha.startsWith('8')) return false; // deve começar com 8
+  const tipoMod = (['6', '7'].includes(linha[2])) ? '10' : '11';
+  const blocks = [
+    linha.substring(0, 12),
+    linha.substring(12, 24),
+    linha.substring(24, 36),
+    linha.substring(36, 48)
+  ];
+  for (let block of blocks) {
+    const data = block.substring(0, 11);
+    const dv = parseInt(block.substring(11, 12));
+    let calc = (tipoMod === '10') ? modulo10(data) : modulo11Arrecadacao(data);
+    if (calc !== dv) return false;
+  }
+  return true;
+}
