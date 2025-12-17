@@ -23,14 +23,24 @@ body{
 
 header {
   display: flex;
-  flex-direction: column;
   align-items: center;
   margin: 2rem;
+  gap: 12rem;
+}
+
+header a {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #0b6b8a;
+  text-decoration: none;
+}
+
+header a:visited {
+  color: #0455be;
 }
 
 header img {
   max-width: 10rem;
-
 }
 
 .container { 
@@ -65,8 +75,7 @@ header img {
   box-shadow:0 4px 12px rgb(0 0 0 / 0.05);
 }
 
-.group-title{
-  margin:1rem 0 2rem 0;
+.group-title {
   font-size:28px;
   font-weight:700;
 }
