@@ -75,6 +75,23 @@ header img {
   box-shadow:0 4px 12px rgb(0 0 0 / 0.05);
 }
 
+.tituloCard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  max-width: 90%;
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: #222222; 
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'wght' 400; 
+  font-size: 3.3rem;
+  color: #1839a7;
+}
+
 .group-title {
   font-size:28px;
   font-weight:700;
@@ -114,4 +131,3 @@ header img {
   text-align:center;
   padding:6px;
 }
-
