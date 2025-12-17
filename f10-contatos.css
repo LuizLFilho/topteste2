@@ -71,19 +71,20 @@ header img {
   gap: 1.5rem;
   padding:2rem;
   border-radius:14px;
-  border:1px solid var(--border);
-  box-shadow:0 4px 12px rgb(0 0 0 / 0.05);
+  border: 1px solid #9d9d9e;
+  box-shadow:0 4px 12px rgba(0, 0, 0, 0.226);
 }
 
 .tituloCard {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
+  gap: 0.6rem;
   max-width: 90%;
   font-size: 1.7rem;
-  font-weight: 600;
+  font-weight: 700;
   color: #222222; 
+  text-align: center;
 }
 
 .material-symbols-outlined {
