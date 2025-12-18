@@ -24,8 +24,9 @@ body{
 header {
   display: flex;
   align-items: center;
-  margin: 2rem;
-  gap: 8rem;
+  justify-content: space-around;
+  width: 100%;
+  margin: 2rem auto;
 }
 
 header a {
@@ -132,3 +133,4 @@ header img {
   text-align:center;
   padding:6px;
 }
+
