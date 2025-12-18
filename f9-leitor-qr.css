@@ -125,14 +125,16 @@ video {
 .primary { 
   background: #0455be;
   color:white; 
-  height: 1.5rem;
+  height: 5rem;
+  font-size: 2rem;
 }
 
 .secondary { 
   background:#0455be; 
   color:#0f1724; 
   border:1px solid var(--border); 
-  height: 1.5rem;
+  height: 5rem;
+  font-size: 2rem;
 }
 
 .small { 
@@ -179,14 +181,17 @@ video {
 .btn.action { 
   flex:2; 
   background:#0455be;; 
-  color:white; 
+  color:white;
+  font-size: 1.5rem; 
+  height: 3rem;
 }
 
 .extra { 
   margin-top:10px; 
   color:var(--muted); 
-  font-size:13px; 
-  text-align:center 
+  font-size: 1.5rem;
+  text-align:center;
+  height: 3rem;
 }
 
 .footer { 
