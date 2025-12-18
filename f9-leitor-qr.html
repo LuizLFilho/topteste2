@@ -13,7 +13,6 @@
   </header>
 
   <main class="container" role="main" aria-labelledby="title">
-    <h1 id="title">Ler QR Code</h1>
 
      <section id="resultCard" class="card hidden" aria-live="polite">
       <div class="label">Conteúdo do QR CODE</div>
@@ -28,14 +27,15 @@
     </section>
 
     <section class="card">
-      <div class="video-wrap">
-        <video id="video" autoplay playsinline></video>
-        <div id="overlay" class="overlay hidden">Lendo...</div>
-      </div>
-
+      
       <div class="controls">
         <button id="btnStart" class="btn primary">Ler QR Code</button>
         <button id="btnStop" class="btn secondary hidden">Desligar Câmera</button>
+      </div>
+      
+      <div class="video-wrap">
+        <video id="video" autoplay playsinline></video>
+        <div id="overlay" class="overlay hidden">Lendo...</div>
       </div>
 
       <div id="err" class="error hidden"></div>
