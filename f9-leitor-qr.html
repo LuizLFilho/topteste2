@@ -15,18 +15,6 @@
   <main class="container" role="main" aria-labelledby="title">
     <h1 id="title">Ler de QR Code</h1>
 
-     <section id="resultCard" class="card hidden" aria-live="polite">
-      <div class="label">Conteúdo lido</div>
-      <div id="content" class="content">—</div>
-
-      <div id="actionRow" class="action-row">
-        <button id="suggestBtn" class="btn action">Ação sugerida</button>
-        <button id="copyBtn" class="btn small">Copiar</button>
-      </div>
-
-      <div id="extra" class="extra muted"></div>
-    </section>
-
     <section class="card">
       <div class="video-wrap">
         <video id="video" autoplay playsinline></video>
@@ -39,6 +27,18 @@
       </div>
 
       <div id="err" class="error hidden"></div>
+    </section>
+
+    <section id="resultCard" class="card hidden" aria-live="polite">
+      <div class="label">Conteúdo lido</div>
+      <div id="content" class="content">—</div>
+
+      <div id="actionRow" class="action-row">
+        <button id="suggestBtn" class="btn action">Ação sugerida</button>
+        <button id="copyBtn" class="btn small">Copiar</button>
+      </div>
+
+      <div id="extra" class="extra muted"></div>
     </section>
 
     <footer class="footer muted small"></footer>
