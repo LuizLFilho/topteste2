@@ -8,7 +8,7 @@
 }
 
 *{box-sizing:border-box}
-html,body{height:100%}
+html,body{min-height:vh}
 body {
   margin:0; 
   font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
@@ -17,7 +17,7 @@ body {
   padding:18px; 
   display:flex; 
   flex-direction: column;
-  justify-content:center; 
+  justify-content:flex-start; 
   align-items:flex-start;
   color:#0f1724;
 }
