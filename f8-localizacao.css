@@ -55,20 +55,6 @@ header img {
   gap:14px;
 }
 
-.txtAviso {
-  display: flex;  
-  flex-direction: column;
-  align-items: center;
-}
-
-.txtAviso .p1 {
-  font-size: 2rem;
-}
-
-.txtAviso .p2 {
-  font-size: 2rem;
-}
-
 
 h1{margin:0; font-size:20px; text-align:center}
 .subtitle{color:var(--muted); font-size:13px; text-align:center}
@@ -89,7 +75,13 @@ h1{margin:0; font-size:20px; text-align:center}
   font-size:16px;
   cursor:pointer;
 }
-.primary{ background:var(--primary); color:white; }
+
+.primary { 
+  background:#0455be;
+  color:white; 
+  height: 7rem;
+  font-size: 2rem;
+}
 .secondary{ background:#eef2f3; color:#0f1724; border:1px solid var(--border); }
 .muted{ color:var(--muted) }
 .status{ margin-top:10px; font-size:13px; color:var(--muted) }
