@@ -4,22 +4,19 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Assistente — Enviar Minha Localização</title>
-  <link rel="stylesheet" href="f8-localizacao.css">
+  <link rel="stylesheet" href="localizacao.css">
 </head>
 <body>
-  <header>
-      <a href="index.html">⬅</a>
-      <img src="graficos/LogoFinal.png" alt="Logo Ajuda Tech">     
-  </header>
-
   <main class="container" role="main" aria-labelledby="title">
-    <p class="subtitle"> ⚠️ Compartilhe sua localização com alguém de confiança rapidamente.</p>
+    <h1 id="title">Assistente “Estou Aqui”</h1>
+    <p class="subtitle">Compartilhe sua localização com alguém de confiança rapidamente.</p>
 
     <section class="card">
+      <div class="note">Clique no botão para obter sua localização precisa e abrir o menu de compartilhamento do celular.</div>
 
       <button id="btnGet" class="btn primary">Enviar Minha Localização</button>
-      <div id="status" class="status"></div>
 
+      <div id="status" class="status muted">Pronto</div>
     </section>
 
     <!-- Exibe link / coordenadas como fallback -->
@@ -34,7 +31,7 @@
       </div>
     </section>
 
-    <footer class="footer muted small"></footer>
+    <footer class="footer muted small">⚠️ Compartilhe sua localização APENAS com contatos de TOTAL confiança.</footer>
   </main>
 
   <!-- Modal de alerta -->
@@ -56,6 +53,6 @@
     </div>
   </div>
 
-  <script src="f8-localizacao.js"></script>
+  <script src="localizacao.js"></script>
 </body>
 </html>
