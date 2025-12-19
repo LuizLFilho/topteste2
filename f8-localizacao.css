@@ -157,6 +157,7 @@ h1 {
 
 .modal-box {
   display: flex;
+  flex-direction: column;
   position:relative; 
   z-index:10; 
   width:90%; 
