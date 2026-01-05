@@ -2,7 +2,7 @@ body {
     background: #f2f2f2;
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 .container {
@@ -11,9 +11,33 @@ body {
     padding: 22px;
 }
 
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  margin: 2rem auto;
+}
+
+header a {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #0b6b8a;
+  text-decoration: none;
+}
+
+header a:visited {
+  color: #0455be;
+}
+
+header img {
+  max-width: 10rem;
+}
+
+
 .title {
     text-align: center;
-    font-size: 28px;
+    font-size: 2rem;
     margin-bottom: 22px;
 }
 
@@ -26,6 +50,7 @@ body {
     border: none;
     border-radius: 14px;
     cursor: pointer;
+    font-size: 2rem;
 }
 
 .btn-primary:active {
@@ -47,22 +72,23 @@ body {
 
 .result-block {
     margin-bottom: 18px;
+    margin-bottom: 5rem;
 }
 
 .label {
-    font-size: 20px;
+    font-size: 2rem;
     margin-bottom: 6px;
 }
 
 .value {
-    font-size: 32px;
+    font-size: 1.6rem;
     font-weight: bold;
-    color: #111;
+    color: #3d3d3d;
 }
 
 .mensagem-final {
     margin-top: 12px;
-    font-size: 20px;
+    font-size: 3rem;
     text-align: center;
     font-weight: bold;
     color: #006600;
