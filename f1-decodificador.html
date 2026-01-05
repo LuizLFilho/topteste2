@@ -7,6 +7,12 @@
   <link rel="stylesheet" href="f1-decodificador.css">
 </head>
 <body>
+
+  <header>
+    <a href="index.html">⬅</a>
+    <img src="graficos/LogoFinal.png" alt="Logo Ajuda Tech">     
+  </header>
+
   <main class="container" role="main" aria-labelledby="title">
     <h1 id="title">Ler código do boleto</h1>
 
@@ -15,7 +21,7 @@
       <label class="file-label" for="fileInput">Escolher PDF</label>
       <input id="fileInput" type="file" accept="application/pdf" />
 
-      <div id="status" class="status muted">Selecione um PDF (com ou sem senha)</div>
+      <div id="status" class="status muted"></div>
     </section>
 
     <!-- Card de preview + resultado (invisível até upload) -->
@@ -29,19 +35,16 @@
       <div class="result-box" id="resultBox">—</div>
 
       <div class="result-actions">
-        <button id="btnCopy" class="btn" disabled>Copiar (somente dígitos)</button>
+        <button id="btnCopy" class="btn" disabled>Copiar o código de barra</button>
         <button id="btnShowFormatted" class="btn secondary" disabled>Mostrar formato legível</button>
       </div>
 
-      <div class="hint muted" style="margin-top:8px">Se o PDF estiver protegido, será solicitada a senha.</div>
     </section>
 
     <!-- Modal senha -->
     <div id="pwdModal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="pwdLabel">
       <div class="modal-back"></div>
       <div class="modal-box">
-        <h2 id="pwdLabel">PDF protegido</h2>
-        <p class="muted">Insira a senha do PDF para continuar.</p>
         <input id="pwdInput" type="password" placeholder="Senha do PDF" />
         <div class="modal-actions">
           <button id="pwdCancel" class="btn secondary">Cancelar</button>
@@ -50,7 +53,6 @@
       </div>
     </div>
 
-    <footer class="footer muted small">Funciona só no frontend — usa PDF.js. Versão 1.0</footer>
   </main>
 
   <!-- PDF.js -->
@@ -58,3 +60,4 @@
   <script src="f1-decodificador.js"></script>
 </body>
 </html>
+
