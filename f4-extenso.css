@@ -77,7 +77,7 @@ input{
 .btn{flex:1; padding:12px; border-radius:10px; font-weight:700; font-size:2rem; cursor:pointer; border:none}
 .btn.primary{background:var(--accent); color:#fff}
 .btn.secondary{background:#f3f4f6; color:var(--muted); border:1px solid var(--border)}
-.btn.copy{background:#0a9a44; color:#fff}
+.btn.copy{background:#0d6ec9; color:#fff}
 
 /* erro */
 .erro{color:var(--danger); font-size:14px; margin-top:10px}
@@ -86,7 +86,7 @@ input{
 /* resultado */
 .result-label{color:var(--muted); font-size:13px; margin-bottom:8px}
 .extenso{
-  font-size:20px;
+  font-size:2rem;
   font-weight:800;
   letter-spacing:0.6px;
   background:#fbfdfe;
@@ -101,5 +101,4 @@ input{
 /* mensagem copiado */
 .copied{margin-top:8px; color:#0b6b8a; font-weight:700; text-align:center}
 
-/* footer */
-.footer{font-size:12px; color:var(--muted); text-align:center; margin-top:8px}
+
