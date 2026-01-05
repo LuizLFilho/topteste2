@@ -136,7 +136,8 @@ input{
   font-size:2rem;
   font-weight: 600;
   color:black;
-  margin-top:12px;
+  margin-top: 0.5rem;
+  margin-bottom: 0px;
 }
 
 .result{
@@ -145,7 +146,8 @@ input{
   border-radius:8px;
   font-size:2rem;
   font-weight:600;
-  margin-top:4px;
+  margin-top: 5px;
+  margin-bottom: 3rem;
 }
 
 .copiado{
