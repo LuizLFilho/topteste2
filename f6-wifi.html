@@ -11,20 +11,24 @@
     <script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script>
 </head>
 <body>
+    <header>
+      <a href="index.html">⬅</a>
+      <img src="graficos/LogoFinal.png" alt="Logo Ajuda Tech">     
+    </header>
 
     <div class="container">
 
-        <h1>Gerar QR Code de Wi-Fi</h1>
+        <h1>Gerar QR Code da minha internet de casa.</h1>
 
-        <label>Nome da Rede (SSID)</label>
+        <label>Nome da sua Internet</label>
         <input type="text" id="ssid" placeholder="Ex: MinhaCasaWiFi">
 
-        <label>Senha da Rede</label>
+        <label>Senha da Internet</label>
         <input type="text" id="password" placeholder="Ex: 12345678">
 
         <div class="checkbox-row">
             <input type="checkbox" id="noPass">
-            <label for="noPass">Rede sem senha</label>
+            <label for="noPass">Rede sem senha (só marque se não tiver senha)</label>
         </div>
 
         <button id="generateBtn">Gerar QR Code</button>
