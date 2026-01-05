@@ -1,7 +1,7 @@
 :root{
   --bg:#f2f4f7;
   --card:#ffffff;
-  --accent:#0b6b8a;
+  --accent:#0b45c4;
   --muted:#6b7280;
   --danger:#d9534f;
   --border:rgba(0,0,0,0.06);
@@ -9,15 +9,40 @@
 
 *{box-sizing:border-box}
 html,body{height:100%}
+
 body{
+  display:flex;
+  flex-direction: column;
+  justify-content:flex-start;
   margin:0;
   font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
   background:var(--bg);
   -webkit-font-smoothing:antialiased;
   padding:18px;
-  display:flex;
-  justify-content:center;
-  align-items:flex-start;
+
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 90%;
+  margin: 3rem auto;
+}
+
+header a {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #0b6b8a;
+  text-decoration: none;
+}
+
+header a:visited {
+  color: #0455be;
+}
+
+header img {
+  max-width: 10rem;
 }
 
 /* container central */
@@ -31,32 +56,25 @@ body{
 }
 
 /* header */
-h1{margin:0; font-size:20px; color:#0f1724; text-align:center}
-.subtitle{color:var(--muted); font-size:13px; text-align:center; margin-top:4px}
+h1{margin:0; font-size:2rem;; color:#0f1724; text-align:center}
+.subtitle{color:var(--muted); font-size:1.5rem; text-align:center; margin-top:4px}
 
-/* card */
-.card{
-  background:var(--card);
-  border-radius:12px;
-  padding:14px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
-  border:1px solid var(--border);
-}
 
 /* inputs */
-.label{display:block; font-size:14px; color:var(--muted); margin-bottom:6px}
+.label{display:block; font-size:2rem; color:var(--muted); margin-bottom:6px}
 input{
   width:100%;
   padding:12px;
-  font-size:18px;
+  font-size:2rem;
   border-radius:10px;
   border:1px solid #ddd;
   outline:none;
+  margin-bottom: 1rem;
 }
 
 /* layout botões */
 .row{display:flex; gap:10px; margin-top:12px}
-.btn{flex:1; padding:12px; border-radius:10px; font-weight:700; font-size:15px; cursor:pointer; border:none}
+.btn{flex:1; padding:12px; border-radius:10px; font-weight:700; font-size:2rem; cursor:pointer; border:none}
 .btn.primary{background:var(--accent); color:#fff}
 .btn.secondary{background:#f3f4f6; color:var(--muted); border:1px solid var(--border)}
 .btn.copy{background:#0a9a44; color:#fff}
