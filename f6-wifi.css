@@ -59,9 +59,16 @@ input[type="text"] {
 
 .checkbox-row {
     display: flex;
+    gap: 1rem;
     align-items: center;
     margin-bottom: 2rem;
     margin-top: 2rem;
+}
+
+.checkbox-row input[type="checkbox"] {
+    transform: scale(1.8); /* Tamanho bem visível */
+    cursor: pointer;
+    margin-left: 5px; /* Pequeno ajuste de respiro lateral se necessário */
 }
 
 .checkbox-row label {
