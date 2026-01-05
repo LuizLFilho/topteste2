@@ -25,32 +25,33 @@ generateBtn.addEventListener("click", () => {
     errorMsg.textContent = "";
 
     if (ssid === "") {
-        errorMsg.textContent = "Por favor, preencha o Nome da Rede (SSID).";
+        errorMsg.textContent = "Por favor, preencha o nome da sua internet.";
         return;
     }
 
-    if (!noPassCheck.checked && password === "") {
-        errorMsg.textContent =
-            "Por favor, preencha a Senha ou marque 'Rede sem senha'.";
-        return;
+    let wifiString = "";
+    if (noPassCheck.checked) {
+        // Formato para rede aberta (Sem aspas)
+        wifiString = `WIFI:S:${ssid};T:nopass;;`;
+    } else {
+        if (password === "") {
+            errorMsg.textContent = "Por favor, preencha a Senha.";
+            return;
+        }
+        // Formato padrão universal (Sem aspas)
+        // WIFI:S:NOME;T:WPA;P:SENHA;;
+        wifiString = `WIFI:S:${ssid};T:WPA;P:${password};;`;
     }
 
-    const wifiString = noPassCheck.checked
-        ? `WIFI:S:${ssid};T:nopass;;`
-        : `WIFI:S:${ssid};T:WPA;P:${password};;`;
+    console.log("String gerada:", wifiString);
 
-    // Limpa QR anterior
-    if (qrcode) {
-        qrcode.clear();
-        qrcode = null;
-    }
     document.getElementById("qrcode").innerHTML = "";
-
-    // Cria o QR
+    
     qrcode = new QRCode(document.getElementById("qrcode"), {
         text: wifiString,
         width: 250,
-        height: 250
+        height: 250,
+        correctLevel: QRCode.CorrectLevel.M // Nível Médio costuma ser mais legível para senhas longas
     });
 
     qrContainer.style.display = "block";
