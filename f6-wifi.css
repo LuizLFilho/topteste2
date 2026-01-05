@@ -29,7 +29,7 @@ header img {
 }
 
 .container {
-    max-width: 420px;
+    max-width: 85%;
     margin: auto;
     padding: 20px;
 }
@@ -44,17 +44,17 @@ label {
     font-weight: bold;
     margin-top: 1.7rem;
     display: block;
-    font-size: 1.3rem;
+    font-size: 1.4rem;
 }
 
 input[type="text"] {
-    width: 100%;
+    width: 95%;
     padding: 12px;
     margin-top: 6px;
     margin-bottom: 18px;
     border: 1px solid #ccc;
     border-radius: 8px;
-    font-size: 16px;
+    font-size: 1.3rem;
 }
 
 .checkbox-row {
