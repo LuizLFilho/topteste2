@@ -1,16 +1,38 @@
 :root{
   --bg:#0b1220; 
   --card:#071426; 
-  --accent:#06b6d4; 
+  --accent:#0d54be; 
   --muted:#9fb0bf;
 }
 
 body{
   margin:0;
-  background:linear-gradient(180deg,#051423 0%, #081426 100%);
-  font-family:Inter, sans-serif;
+  font-family: 'Inter', sans-serif;
   color:#e8f7fb;
   padding:22px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 90%;
+  margin: 3rem auto;
+}
+
+header a {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #0b6b8a;
+  text-decoration: none;
+}
+
+header a:visited {
+  color: #0455be;
+}
+
+header img {
+  max-width: 10rem;
 }
 
 .container{
@@ -20,26 +42,28 @@ body{
 
 h1{
   margin:0 0 6px;
-  font-size:20px;
+  font-size:2rem;
+  color: black;
 }
 
 .subtitle{
   color:var(--muted);
-  font-size:13px;
-  margin-bottom:18px;
+  font-size:1.3rem;
+  margin-bottom:2rem;
+  color: black;
 }
 
 .card{
-  background:rgba(255,255,255,0.04);
-  padding:18px;
-  border-radius:14px;
-  margin-bottom:18px;
+  width: 90%;
+  margin-top: 4rem;
+  margin-bottom:1rem;
 }
 
 label{
   display:block;
   margin:10px 0 4px;
-  font-size:14px;
+  font-size:1.6rem;
+  color: black;
 }
 
 input{
@@ -48,8 +72,9 @@ input{
   border-radius:8px;
   border:1px solid rgba(255,255,255,0.05);
   background:rgba(255,255,255,0.02);
-  color:#fff;
-  font-size:15px;
+  color:#080808;
+  font-size:1.4rem;
+  margin-bottom: 2rem;
 }
 
 .btn{
@@ -60,21 +85,22 @@ input{
   border-radius:10px;
   margin-top:16px;
   font-weight:600;
-  font-size:16px;
+  font-size:2rem;
   color:#022029;
   cursor:pointer;
 }
 
 .btn.small{
   margin-top:10px;
-  font-size:14px;
+  font-size:1rem;
   padding:10px;
 }
 
 .toggle-row{
   display:flex;
   gap:10px;
-  margin-top:6px;
+  margin-top:1rem;
+  margin-bottom: 4rem;
 }
 
 .toggle-btn{
@@ -86,6 +112,7 @@ input{
   color:#022029;
   font-weight:600;
   cursor:pointer;
+  font-size: 2rem;
 }
 
 .toggle-btn.off{
