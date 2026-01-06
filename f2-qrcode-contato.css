@@ -1,117 +1,151 @@
 :root {
-    --bg:#f0f2f5;
-    --card:#ffffff;
-    --text:#222;
-    --muted:#666;
-    --accent:#007bff;
-    --accent-dark:#005fcc;
+    --bg: #eef2f7;
+    --card-bg: #ffffff;
+    --primary: #0e4fdb; /* Verde estilo WhatsApp para familiaridade */
+    --text: #333;
+    --muted: #777;
 }
 
 body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin: 0;
-    font-family: Inter, Arial, sans-serif;
+    font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
     background: var(--bg);
     display: flex;
     justify-content: center;
-    padding: 20px;
+    padding: 15px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 90%;
+  margin: 3rem auto;
+}
+
+header a {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #0e4fdb;
+  text-decoration: none;
+}
+
+header a:visited {
+  color: #0455be;
+}
+
+header img {
+  max-width: 10rem;
 }
 
 .container {
     width: 100%;
-    max-width: 430px;
-    background: var(--card);
+    max-width: 400px;
+    text-align: center;
+}
+
+h1 { font-size: 2rem; color:black; margin-bottom: 2rem; }
+.subtitle { font-size: 14px; color: var(--muted); margin-bottom: 20px; }
+
+/* ESTILO DO CARTÃO VISUAL */
+.business-card {
+    background: var(--card-bg);
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
     padding: 20px;
-    border-radius: 14px;
-    box-shadow: 0 4px 18px rgba(0,0,0,0.1);
-}
-
-h1 {
-    margin: 0;
-    font-size: 22px;
-    color: var(--text);
-}
-
-.subtitle {
-    font-size: 14px;
+    text-align: left;
+    border: 1px solid #ddd;
     margin-bottom: 20px;
-    color: var(--muted);
+    transition: 0.3s;
 }
 
-.form-group {
+.card-header {
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid var(--bg);
+    padding-bottom: 10px;
     margin-bottom: 15px;
 }
 
-.form-group label {
-    font-size: 14px;
+.user-icon {
+    font-size: 30px;
+    background: #f0f0f0;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.card-title {
+    font-weight: bold;
     color: var(--muted);
+    font-size: 1rem;
+    letter-spacing: 1px;
 }
 
-input {
-    width: 100%;
-    margin-top: 6px;
-    padding: 12px;
-    font-size: 16px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
+.input-field {
+    margin-bottom: 15px;
 }
 
-.btn-primary,
-.btn-secondary {
+.input-field label {
+    display: block;
+    font-size: 1rem;
+    color: var(--primary);
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.input-field input {
     width: 100%;
-    padding: 14px;
-    font-size: 17px;
-    border-radius: 10px;
-    margin-bottom: 10px;
+    border: none;
+    border-bottom: 1px dashed #ccc;
+    padding: 8px 0;
+    font-size: 18px;
+    color: var(--text);
+    outline: none;
+    background: transparent;
+}
+
+.input-field input:focus {
+    border-bottom: 1px solid var(--primary);
+}
+
+/* QR CODE DENTRO DO CARTÃO */
+.qr-result {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+.qr-instruction {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 8px;
+}
+
+/* BOTÕES */
+.actions button {
+    width: 100%;
+    padding: 15px;
+    border-radius: 12px;
+    font-size: 1.4rem;
+    font-weight: bold;
     cursor: pointer;
-    transition: 0.2s;
-}
-
-.btn-primary {
-    background: var(--accent);
-    color: white;
+    margin-bottom: 10px;
     border: none;
 }
-.btn-primary:hover {
-    background: var(--accent-dark);
-}
 
-.btn-secondary {
-    background: #e9ecef;
-    border: 1px solid #ccc;
-}
-.btn-secondary:hover {
-    background: #d6d8db;
-}
+.btn-primary { background: var(--primary); color: white; }
+.btn-success { background: #9b9c9e; color: white; }
+.btn-secondary { background: #e9ecef; color: #333; }
+.btn-link { background: none; color: #888; text-decoration: none; font-size: 13px; }
 
-.erro {
-    color: red;
-    font-size: 14px;
-    margin-top: 5px;
-}
-
-.qr-section {
-    margin-top: 25px;
-    text-align: center;
-    animation: fadeIn 0.4s ease;
-}
-
-.qr-box {
-    background: #fafafa;
-    padding: 20px;
-    border-radius: 14px;
-    margin: 15px 0;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-}
-
-.hidden {
-    display: none;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to   { opacity: 1; transform: translateY(0); }
-}
-
-.fade {
-    animation: fadeIn 0.4s ease;
-}
+.hidden { display: none; }
+.erro { color: #d9534f; font-weight: bold; margin-bottom: 10px; }
