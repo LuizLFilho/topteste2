@@ -3,43 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gerador de Contato QR</title>
+    <title>Meu Cartão de Contato</title>
     <link rel="stylesheet" href="f2-qrcode-contato.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 </head>
 <body>
+<header>
+    <a href="index.html">⬅</a>
+    <img src="graficos/LogoFinal.png" alt="Logo Ajuda Tech">     
+</header>
 
 <div class="container">
+    <h1>Meu Cartão Digital</h1>
 
-    <h1>Meu QR de Contato</h1>
-    <p class="subtitle">Preencha seus dados e gere um QR Code para compartilhar facilmente.</p>
+    <div id="cartaoVisual" class="business-card">
+        <div class="card-header">
+            <div class="user-icon">👤</div>
+            <div class="card-title">CARTÃO DE CONTATO</div>
+        </div>
+        
+        <div class="card-body">
+            <div class="input-field">
+                <label>Nome Completo</label>
+                <input id="nome" type="text" placeholder="Toque para digitar seu nome" maxlength="30">
+            </div>
 
-    <div class="form-group">
-        <label>Nome completo *</label>
-        <input id="nome" type="text" placeholder="Ex: João da Silva" required>
+            <div class="input-field">
+                <label>Telefone / WhatsApp</label>
+                <input id="telefone" type="text" placeholder="(00) 00000-0000" maxlength="15">
+            </div>
+
+            <div class="input-field">
+                <label>E-mail (opcional)</label>
+                <input id="email" type="email" placeholder="seu@email.com">
+            </div>
+        </div>
+
+        <div id="qrSection" class="qr-result hidden">
+            <div id="qrContainer"></div>
+        </div>
     </div>
 
-    <div class="form-group">
-        <label>Telefone *</label>
-        <input id="telefone" type="text" placeholder="(31) 99999-9999" required maxlength="15">
-    </div>
+    <div class="actions">
+        <button id="gerarBtn" class="btn-primary">Criar meu QR Code</button>
+        
+        <div id="downloadOptions" class="hidden">
+            <button id="downloadIMG" class="btn-success">Salvar Cartão na Galeria (Foto)</button>
+            <button id="downloadVCF" class="btn-secondary">Baixar Arquivo de Contato</button>
+        </div>
 
-    <div class="form-group">
-        <label>E-mail (opcional)</label>
-        <input id="email" type="email" placeholder="voce@email.com">
+        <button id="limparBtn" class="btn-link">Limpar tudo e recomeçar</button>
     </div>
-
-    <button id="gerarBtn" class="btn-primary">Gerar QR Code</button>
-    <button id="limparBtn" class="btn-secondary">Limpar</button>
 
     <div id="erro" class="erro"></div>
-
-    <div id="qrSection" class="qr-section hidden">
-        <h2>Seu QR Code</h2>
-        <div id="qrContainer" class="qr-box"></div>
-
-        <button id="downloadVCF" class="btn-primary">Baixar Contato (.vcf)</button>
-    </div>
-
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
